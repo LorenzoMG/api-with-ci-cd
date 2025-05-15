@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 9.0.x
+    - name: Who i am
+      run: ls
     - name: Restore dependencies
       run: dotnet restore ../../ShipsApi.sln
     - name: Build
