@@ -8,7 +8,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+defaults:
+  run:
+    working-directory: Ships
 jobs:
   build:
 
@@ -25,7 +27,7 @@ jobs:
     # - name: Change solution directory
     #   run: cd ShipsApi && ls
     - name: Restore dependencies
-      run: pwd && ls && dotnet restore ShipsApi/ShipsApi.sln
+      run: pwd && ls && dotnet restore ShipsApi.sln
     - name: Build
       run: dotnet build ShipsApi.sln --no-restore
     - name: Test
