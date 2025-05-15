@@ -22,10 +22,10 @@ jobs:
         dotnet-version: 9.0.x
     - name: Who i am
       run: ls
-    - name: Change solution directory
-      run: cd ShipsApi && ls
+    # - name: Change solution directory
+    #   run: cd ShipsApi && ls
     - name: Restore dependencies
-      run: pwd && dotnet restore ShipsApi.sln
+      run: pwd && ls && dotnet restore ShipsApi/ShipsApi.sln
     - name: Build
       run: dotnet build ShipsApi.sln --no-restore
     - name: Test
