@@ -5,12 +5,14 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop", "release" ]
   pull_request:
     branches: [ "main" ]
+
 defaults:
   run:
     working-directory: ShipsApi
+
 jobs:
   build:
 
@@ -22,12 +24,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 9.0.x
-    - name: Who i am
-      run: ls
-    # - name: Change solution directory
-    #   run: cd ShipsApi && ls
     - name: Restore dependencies
-      run: pwd && ls && dotnet restore ShipsApi.sln
+      run: dotnet restore ShipsApi.sln
     - name: Build
       run: dotnet build ShipsApi.sln --no-restore
     - name: Test
