@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore ShipsApi.sln
+      run: dotnet restore ../../ShipsApi.sln
     - name: Build
-      run: dotnet build ShipsApi.sln --no-restore
+      run: dotnet build ../../ShipsApi.sln --no-restore
     - name: Test
-      run: dotnet test ShipsApi.sln --no-build --verbosity normal
+      run: dotnet test ../../ShipsApi.sln --no-build --verbosity normal
