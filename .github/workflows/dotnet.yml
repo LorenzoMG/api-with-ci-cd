@@ -25,7 +25,7 @@ jobs:
     - name: Change solution directory
       run: cd ShipsApi && ls
     - name: Restore dependencies
-      run: dotnet restore ShipsApi.sln
+      run: pwd && dotnet restore ShipsApi.sln
     - name: Build
       run: dotnet build ShipsApi.sln --no-restore
     - name: Test
